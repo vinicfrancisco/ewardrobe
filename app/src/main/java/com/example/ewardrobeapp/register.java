@@ -8,6 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.ewardrobeapp.models.AuthResponse;
+import com.example.ewardrobeapp.retrofit.RetrofitInitializer;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class register extends AppCompatActivity {
     private EditText nameInput;
     private EditText nicknameInput;
@@ -27,7 +34,7 @@ public class register extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(register.this, MainActivity.class);
+                Intent i = new Intent(register.this, login.class);
                 startActivity(i);
             }
         });
@@ -49,7 +56,20 @@ public class register extends AppCompatActivity {
                 String email = emailInput.getText().toString();
                 String password = passwordInput.getText().toString();
 
-                // CALL API POST /users sending all inputs data
+                Call<AuthResponse> call = new RetrofitInitializer().auth().signUp(name, nickname, genre, email, password);
+                call.enqueue(new Callback<AuthResponse>() {
+                    @Override
+                    public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
+                        // Save user data and token;
+                        // Navigate to home page
+                        Intent i = new Intent(register.this, home.class);
+                        startActivity(i);                    }
+
+                    @Override
+                    public void onFailure(Call<AuthResponse> call, Throwable t) {
+                        // Display error message;
+                    }
+                });
 
                 Intent i = new Intent(register.this, home.class);
                 startActivity(i);
