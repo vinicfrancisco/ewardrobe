@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.ewardrobeapp.models.AuthResponse;
+import com.example.ewardrobeapp.models.User;
 import com.example.ewardrobeapp.retrofit.RetrofitInitializer;
 
 import retrofit2.Call;
@@ -39,12 +40,12 @@ public class login extends AppCompatActivity {
                 String email = emailInput.getText().toString();
                 String password = passwordInput.getText().toString();
 
-                Call<AuthResponse> call = new RetrofitInitializer().auth().signIn(email, password);
+                User user = new User(email, password);
+
+                Call<AuthResponse> call = new RetrofitInitializer().auth().signIn(user);
                 call.enqueue(new Callback<AuthResponse>() {
                     @Override
                     public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
-                        // Save user data and token;
-                        // Navigate to home page
                         Intent i = new Intent(login.this, home.class);
                         startActivity(i);                    }
 

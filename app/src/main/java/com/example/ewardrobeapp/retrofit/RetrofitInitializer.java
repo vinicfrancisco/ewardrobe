@@ -9,7 +9,7 @@ public class RetrofitInitializer {
     private final Retrofit retrofit;
 
     public RetrofitInitializer() {
-        retrofit = new Retrofit.Builder().baseUrl("http://localhost:3333")
+        retrofit = new Retrofit.Builder().baseUrl("https://ewardrobe-api.herokuapp.com")
                 .addConverterFactory(JacksonConverterFactory.create()).build();
     }
 
