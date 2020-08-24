@@ -1,8 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
+    packagingOptions {
+        exclude  "META-INF/LICENSE"
+    }
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
     defaultConfig {
         applicationId "com.example.ewardrobeapp"
         minSdkVersion 26
