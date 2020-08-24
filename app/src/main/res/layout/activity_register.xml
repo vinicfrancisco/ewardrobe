@@ -4,15 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".register">
+
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_width="140dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="108dp"
         android:text="eWardrobe"
+        android:textAlignment="center"
+        android:textColor="#ff9000"
+        android:textSize="72px"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,6 +93,8 @@
         android:layout_width="219dp"
         android:layout_height="48dp"
         android:layout_marginTop="32dp"
+        android:background="@drawable/button"
+        android:textColor="#fff"
         android:text="Registrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
@@ -94,12 +103,16 @@
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="213dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="219dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/outline"
         android:text="Voltar para login"
+        android:textColor="#ff9000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerButton" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

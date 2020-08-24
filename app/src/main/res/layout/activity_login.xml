@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".login">
 
     <EditText
@@ -32,33 +33,23 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="72dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="148dp"
+        android:layout_width="140dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="152dp"
         android:text="eWardrobe"
+        android:textAlignment="center"
+        android:textColor="#ff9000"
+        android:textSize="72px"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/registerButton"
-        android:layout_width="200dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="20dp"
-        android:text="Registrar-se"
-        android:background="@drawable/button"
-        android:textColor="#ffffff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
-
-
-    <Button
         android:id="@+id/loginButton"
-        android:layout_width="200dp"
-        android:layout_height="54dp"
+        android:layout_width="219dp"
+        android:layout_height="48dp"
         android:layout_marginTop="56dp"
         android:text="Login"
         android:background="@drawable/button"
@@ -68,5 +59,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInput"
         />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="219dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:text="Registrar-se"
+        android:background="@drawable/outline"
+        android:textColor="#ff9000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
