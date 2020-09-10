@@ -5,12 +5,12 @@ public class Clothes {
     private String name;
     private String clothes_url;
     private String category_id;
+    private String created_at;
+    private String updated_at;
+    private String user_id;
 
-    public Clothes(String id, String name, String clothes_url, String category_id) {
-        this.id = id;
-        this.name = name;
-        this.clothes_url = clothes_url;
-        this.category_id = category_id;
+    public Clothes() {
+
     }
 
     public String getId() {
@@ -43,5 +43,29 @@ public class Clothes {
 
     public void setCategory_id(String category_id) {
         this.category_id = category_id;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
     }
 }

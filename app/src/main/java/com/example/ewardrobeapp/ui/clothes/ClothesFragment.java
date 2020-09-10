@@ -1,5 +1,6 @@
 package com.example.ewardrobeapp.ui.clothes;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,25 +26,22 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ClothesFragment extends Fragment {
+    private Context me;
     private ClothesViewModel clothesViewModel;
+    private ListView clothes_list;
     View rootView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        me = getContext();
         clothesViewModel =
                 ViewModelProviders.of(this).get(ClothesViewModel.class);
-        rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        rootView = inflater.inflate(R.layout.fragment_clothes, container, false);
 
-        final TextView textView = rootView.findViewById(R.id.text_home);
+        clothes_list = (ListView) rootView.findViewById(R.id.clothes_list);
 
         getClothes();
-
-        clothesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
 
         return rootView;
     }
@@ -54,14 +52,12 @@ public class ClothesFragment extends Fragment {
         call.enqueue(new Callback<List<Clothes>>() {
             @Override
             public void onResponse(Call<List<Clothes>> call, Response<List<Clothes>> response) {
-                ListView clothes_list = (ListView) rootView.findViewById(R.id.clothes_list);
-
-                clothes_list.setAdapter(new ClothesAdapter(getContext(), response.body()));
+                clothes_list.setAdapter(new ClothesAdapter(me, response.body()));
             }
 
             @Override
             public void onFailure(Call<List<Clothes>> call, Throwable t) {
-                // Display error
+                // Display error]
             }
         });
     }

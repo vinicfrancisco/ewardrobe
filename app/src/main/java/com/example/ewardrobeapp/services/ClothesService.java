@@ -5,7 +5,7 @@ import com.example.ewardrobeapp.models.Clothes;
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.http.GET;
+        import retrofit2.http.GET;
 
 public interface ClothesService {
     @GET("/clothes")
