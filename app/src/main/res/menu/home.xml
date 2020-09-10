@@ -4,7 +4,7 @@
     <item
         android:id="@+id/new_clothes"
         android:icon="@drawable/ic_add"
-        android:title="Nova Peça"
+        android:title="@string/action_settings"
         app:showAsAction="ifRoom" />
-    
+
 </menu>
