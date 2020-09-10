@@ -2,6 +2,7 @@ package com.example.ewardrobeapp.retrofit;
 
 import com.example.ewardrobeapp.services.AuthService;
 import com.example.ewardrobeapp.services.ClothesService;
+import com.example.ewardrobeapp.services.LooksService;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
@@ -21,4 +22,6 @@ public class RetrofitInitializer {
     public ClothesService clothes() {
         return retrofit.create(ClothesService.class);
     }
+
+    public LooksService looks() { return  retrofit.create(LooksService.class); }
 }
