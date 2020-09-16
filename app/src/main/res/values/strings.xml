@@ -16,4 +16,9 @@
     <string name="add_clothes_image">Adicionar Foto da Peça</string>
     <string name="add_clothes_name">Nome da peça</string>
     <string name="add_clothes_category">Categoria</string>
+
+    <string-array name="categories">
+        <item>Superior</item>
+        <item>Inferior</item>
+    </string-array>
 </resources>

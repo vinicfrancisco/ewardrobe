@@ -9,9 +9,12 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 public class new_clothes extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -19,9 +22,9 @@ public class new_clothes extends AppCompatActivity {
     private ConstraintLayout layout;
     private ImageView clothes_image;
     private EditText nameInput;
-    private EditText categoryInput;
     private Button saveButton;
     private Button openCamera;
+    private String category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +48,27 @@ public class new_clothes extends AppCompatActivity {
 
         layout = new ConstraintLayout(this);
 
+        Spinner categorySpinner = (Spinner) findViewById(R.id.select_category);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.categories, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        categorySpinner.setAdapter(adapter);
+        categorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                category = (String) adapterView.getItemAtPosition(i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         nameInput = (EditText) findViewById(R.id.clothes_name);
-        categoryInput = (EditText) findViewById(R.id.clothes_category);
         saveButton = (Button) findViewById(R.id.save_clothes_button);
         openCamera = (Button) findViewById(R.id.add_clothes_image);
         clothes_image = (ImageView) findViewById(R.id.new_image);
@@ -63,7 +85,6 @@ public class new_clothes extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = nameInput.getText().toString();
-                String category = categoryInput.getText().toString();
             }
         });
 

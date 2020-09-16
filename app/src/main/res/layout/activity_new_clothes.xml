@@ -68,17 +68,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_clothes_image" />
 
-    <EditText
-        android:id="@+id/clothes_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+    <Spinner
+        android:id="@+id/select_category"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/add_clothes_category"
+        android:spinnerMode="dialog"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clothes_name" />
 
@@ -94,7 +94,7 @@
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clothes_category" />
+        app:layout_constraintTop_toBottomOf="@+id/select_category" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
