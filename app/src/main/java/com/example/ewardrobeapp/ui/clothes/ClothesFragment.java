@@ -1,23 +1,23 @@
 package com.example.ewardrobeapp.ui.clothes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.ewardrobeapp.R;
 import com.example.ewardrobeapp.adapters.ClothesAdapter;
 import com.example.ewardrobeapp.models.Clothes;
+import com.example.ewardrobeapp.new_clothes;
 import com.example.ewardrobeapp.retrofit.RetrofitInitializer;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -42,6 +42,16 @@ public class ClothesFragment extends Fragment {
         clothes_list = (ListView) rootView.findViewById(R.id.clothes_list);
 
         getClothes();
+
+        FloatingActionButton fab = rootView.findViewById(R.id.add_clothes_button);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity().getApplication(), new_clothes.class);
+                startActivity(i);
+            }
+        });
 
         return rootView;
     }

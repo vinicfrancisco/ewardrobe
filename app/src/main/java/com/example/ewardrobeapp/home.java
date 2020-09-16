@@ -1,20 +1,11 @@
 package com.example.ewardrobeapp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
 import android.view.Menu;
-import android.widget.Button;
-import android.widget.ListView;
+import android.view.View;
 
-import com.example.ewardrobeapp.adapters.ClothesAdapter;
-import com.example.ewardrobeapp.models.Clothes;
-import com.example.ewardrobeapp.retrofit.RetrofitInitializer;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -25,11 +16,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class home extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
@@ -56,35 +42,13 @@ public class home extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 
         NavigationUI.setupWithNavController(navigationView, navController);
-
     }
 
-    public void toggleDrawer() {
-        if(drawer.isOpen()) {
-            drawer.close();
-        } else {
-            drawer.open();
-        }
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
-
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.new_clothes:
-                Intent i = new Intent(home.this, new_page.class);
-                startActivity(i);
-            case 16908332:
-                toggleDrawer();
-        }
 
         return true;
     }

@@ -37,7 +37,7 @@ public class new_clothes extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(new_clothes.this, new_page.class);
+                Intent i = new Intent(new_clothes.this, home.class);
                 startActivity(i);
             }
         });

@@ -15,7 +15,6 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".new_look"></activity>
         <activity android:name=".new_clothes" />
-        <activity android:name=".new_page" />
         <activity
             android:name=".home"
             android:label="@string/title_activity_home"

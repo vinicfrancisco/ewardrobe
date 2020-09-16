@@ -23,7 +23,7 @@ public class new_look extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(new_look.this, new_page.class);
+                Intent i = new Intent(new_look.this, home.class);
                 startActivity(i);
             }
         });
