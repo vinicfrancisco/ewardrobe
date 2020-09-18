@@ -39,7 +39,7 @@ public class ClothesRecycleAdapter extends RecyclerView.Adapter<ClothesRecycleAd
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = (View) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.clothes_item, parent, false);
+                .inflate(R.layout.look_clothes_item, parent, false);
 
 
         MyViewHolder vh = new MyViewHolder(v);
