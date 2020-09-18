@@ -85,6 +85,8 @@ public class new_clothes extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = nameInput.getText().toString();
+                Intent i = new Intent(new_clothes.this, home.class);
+                startActivity(i);
             }
         });
 

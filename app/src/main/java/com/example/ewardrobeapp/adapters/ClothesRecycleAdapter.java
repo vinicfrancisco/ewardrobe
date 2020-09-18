@@ -10,16 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ewardrobeapp.R;
-import com.example.ewardrobeapp.models.ClothesCategory;
+import com.example.ewardrobeapp.models.Clothes;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 
 public class ClothesRecycleAdapter extends RecyclerView.Adapter<ClothesRecycleAdapter.MyViewHolder> {
-    private List<ClothesCategory> data;
+    private List<Clothes> data;
 
-    public ClothesRecycleAdapter(List<ClothesCategory> data) {
+    public ClothesRecycleAdapter(List<Clothes> data) {
         this.data = data;
     }
 
@@ -49,7 +49,7 @@ public class ClothesRecycleAdapter extends RecyclerView.Adapter<ClothesRecycleAd
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        ClothesCategory clothes = this.data.get(position);
+        Clothes clothes = this.data.get(position);
 
         holder.clothes_name.setText(clothes.getName());
         Picasso.get().load(clothes.getClothes_url()).resize(200, 200).into(holder.clothes_image);

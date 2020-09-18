@@ -3,26 +3,26 @@ package com.example.ewardrobeapp.models;
 import java.util.List;
 
 public class ClothesTypes {
-    private List<ClothesCategory> top;
-    private List<ClothesCategory> bottom;
+    private List<Clothes> top;
+    private List<Clothes> bottom;
 
     public ClothesTypes() {
 
     }
 
-    public List<ClothesCategory> getTop() {
+    public List<Clothes> getTop() {
         return top;
     }
 
-    public void setTop(List<ClothesCategory> top) {
+    public void setTop(List<Clothes> top) {
         this.top = top;
     }
 
-    public List<ClothesCategory> getBottom() {
+    public List<Clothes> getBottom() {
         return bottom;
     }
 
-    public void setBottom(List<ClothesCategory> bottom) {
+    public void setBottom(List<Clothes> bottom) {
         this.bottom = bottom;
     }
 

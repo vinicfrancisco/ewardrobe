@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.ewardrobeapp.adapters.ClothesAdapter;
 import com.example.ewardrobeapp.adapters.ClothesRecycleAdapter;
@@ -22,6 +23,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class new_look extends AppCompatActivity {
+    private Button saveButton;
     private RecyclerView topClothesList;
     private ClothesRecycleAdapter topClothesAdapter;
     private RecyclerView.LayoutManager topLayoutManager;
@@ -50,6 +52,16 @@ public class new_look extends AppCompatActivity {
 
         topClothesList.setLayoutManager(topLayoutManager);
         bottomClothesList.setLayoutManager(bottomLayoutManager);
+
+        saveButton = (Button) findViewById(R.id.save_look_button);
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(new_look.this, home.class);
+                startActivity(i);
+            }
+        });
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
