@@ -31,8 +31,16 @@ public class ClothesRecycleAdapter extends RecyclerView.Adapter<ClothesRecycleAd
             super(view);
             clothes_name = (TextView) view.findViewById(R.id.clothes_name);
             clothes_image = (ImageView) view.findViewById(R.id.clothes_image);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
         }
     }
+
 
 
     @NonNull
